@@ -1,0 +1,85 @@
+##                  3. You are helping your a doctor to do some basic word manipulation
+##                   techniques, your doctor asks you to write a program that can apply
+##                        the following features based on his needs:
+
+print("Hello my doctor,Im here for your help, enter the sentence you want to manipulate,")
+print("(Dont forget to enter a sentence that need manipulation to see the effect clearly)")
+Sentnc1= input()
+
+print("\n")
+print('You have entered:',Sentnc1, "\n")
+
+print("You can apply any of the following features:\n") 
+print("(1) Capitalize the first character of each word (Cap First)" )
+print("\n")
+print("(2) Reverse the type of each character: capital become low and low become capital (Toggle) ") 
+print("\n")
+print("(3) Returns how many times this sequence appear in the string (Count seq)")
+n=int(input("Enter the number of the feature you would like to apply: 1: Cap First 2: Toggle 3: Count seq \n"))
+
+answ="yes" 
+while answ=="yes": 
+    if(n==1): 
+        x=Sentnc1.title() 
+        print("The new sentence format: ",x)
+
+        answ=str(input("Do you want another manipulation? enter yes or no "))
+        if answ=="yes":
+            
+            check_updating_sentnc=int(input("Do you want to enter a new sentence or continue with the current sentence? 1: current 2: new "))
+            if check_updating_sentnc==2:
+                Sentnc1= input("Enter your new sentence",)          
+            n=int(input("Enter the number of the feature you would like to apply: 1: Cap First   2: Toggle   3: Count seq \n"))
+            continue
+        else:
+            break
+
+
+
+    elif(n==2):
+        x2=Sentnc1
+        new_str=""
+        for i in range (len(x2)):
+            if x2[i].isupper():
+                new_str+=x2[i].lower()
+            elif x2[i].islower():
+                new_str+=x2[i].upper()
+            else:
+                new_str+=x2[i]
+        print("The new sentence format: ",new_str)
+
+        answ=str(input("Do you want another manipulation? enter yes or no "))
+        if answ=="yes":
+            check_updating_sentnc=int(input("Do you want to enter a new sentence or continue with the current sentence? 1: current 2: new "))
+            if check_updating_sentnc==2:
+                Sentnc1= input("Enter your new sentence",)          
+            n=int(input("Enter the number of the feature you would like to apply: 1: Cap First   2: Toggle   3: Count seq \n"))
+            
+            continue
+        else:
+            break
+
+
+    elif(n==3):
+        seq=input("Enter the sequence that you want to count in your sentence: ")
+        cnt = 0
+      
+        indx = Sentnc1.find(seq)
+        while indx >= 0:
+            cnt += 1
+            indx = Sentnc1.find(seq, indx+1)
+        print("The sequence repeated in the sentence: ",cnt,"times")
+        
+         
+        answ=str(input("Do you want another manipulation? enter yes or no "))
+        if answ=="yes":
+            check_updating_sentnc=int(input("Do you want to enter a new sentence or continue with the current sentence? 1: current 2: new "))
+            if check_updating_sentnc==2:
+                Sentnc1= input("Enter your new sentence : ",)          
+            n=int(input("Enter the number of the feature you would like to apply: 1: Cap First   2: Toggle   3: Count seq \n"))
+            continue
+        else:
+            break
+              
+        
+        

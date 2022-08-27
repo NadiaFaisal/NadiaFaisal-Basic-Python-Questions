@@ -1,0 +1,52 @@
+##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!            Task 2: Python                !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!##
+## +++++++++++++++++++++++++           Submitted by: Nadia Faisal         ++++++++++++++++++++++++++++++++++++++++++++##
+## Task Requirements:
+## Solve the following problems:
+
+##                 2. Write a program that generates a random number between 0 and 50,
+##                   and let the user guess what number you generate, the user has only 
+##                          three questions to ask following the next format:
+##   Is it greater than number?
+##   Is it less than number?
+##   Is it a divisible number?
+
+print("Hi,... Let us play a game......")
+
+print("what if i choose a number,, and you try to guess it? ok, let us make it easier\nyou can ask me three questions about my number.....")
+print("\n")
+print("my number is between 0 and 50, so,, what do you say?!")
+print("\n")
+import random
+number_generated = random.randint(0,50) # to generate a random number in the range 0-50
+
+print("you can ask me now your questions\n")
+
+
+ch1=int(input("Is it greater than what (choose a number)"))
+if (number_generated>ch1):
+    print("yes")
+else:
+    print("no")
+
+
+ch2=int(input("Is it less than what (choose a number)"))
+if (number_generated<ch2):
+    print("yes")
+else:
+    print("no")
+
+
+db=int(input("Is it divisible by a number (choose a number)"))
+if ((db%number_generated)==0):
+    print("yes")
+else:
+    print("no")
+
+
+guessed_number=int(input("so, what is your guessing? "))
+
+if(guessed_number==number_generated):
+    print("yaaaaaaaay, you do it, you are right!!!!")
+else:
+    print("OoOoOoOoOops!!!, no, it is not: ",guessed_number," it is :",number_generated)
+    
